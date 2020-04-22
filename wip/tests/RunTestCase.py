@@ -1,4 +1,4 @@
-from wip.tests.mymodule import rm
+from wip.tests.mymodule import RemovalService
 
 import os.path
 import tempfile
@@ -15,14 +15,7 @@ class RmTestCase(unittest.TestCase):
 
     def test_rm(self):
         # remove the file
-        rm(self.temp_file_path)
+        reference = RemovalService
+        reference.rm(self.temp_file_path)
         # test that it was actually removed
-        self.assertFalse(os.path.isfile(self.temp_file_path), "Failed to remove the file.")
-
-
-
-
-
-
-
-
+        self.assertFalse(os.path.isfile("tmp-testfile"))
